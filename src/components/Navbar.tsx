@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { setSmootherInstance, smoother } from "./utils/smoother";
 import { usePortfolioData } from "../context/usePortfolioData";
 import "./styles/Navbar.css";
@@ -14,18 +14,20 @@ const Navbar = () => {
   const siteConfig = data.site_config;
 
   useEffect(() => {
-    const instance = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.5,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
+    if (window.innerWidth > 1024) {
+      const instance = ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 1.5,
+        effects: true,
+        autoResize: true,
+        ignoreMobileResize: true,
+      });
 
-    setSmootherInstance(instance);
-    instance.scrollTop(0);
-    instance.paused(true);
+      setSmootherInstance(instance);
+      instance.scrollTop(0);
+      instance.paused(true);
+    }
 
     const links = document.querySelectorAll<HTMLAnchorElement>(".header ul a");
     const clickHandlers: Array<{ el: HTMLAnchorElement; handler: (e: MouseEvent) => void }> = [];
@@ -46,7 +48,9 @@ const Navbar = () => {
     });
 
     const onResize = () => {
-      ScrollSmoother.refresh(true);
+      if (smoother) {
+        ScrollSmoother.refresh(true);
+      }
     };
     window.addEventListener("resize", onResize);
 
