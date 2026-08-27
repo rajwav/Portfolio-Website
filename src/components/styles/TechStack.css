@@ -1,0 +1,71 @@
+.techstack {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.techstack h2 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: #f8fafc;
+  margin: 0;
+  text-align: center;
+  font-family: "Geist", sans-serif;
+  z-index: 5;
+}
+
+.techstack h2 span {
+  font-size: clamp(14px, 1.8vw, 22px);
+  font-weight: 400;
+  font-family: monospace, "Geist Mono", sans-serif;
+  color: var(--accentColor);
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.techstack-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  z-index: 5;
+  max-width: 900px;
+}
+
+.tech-legend-pill {
+  font-size: 11px;
+  font-family: monospace, "Geist Mono", sans-serif;
+  padding: 4px 10px;
+  background: rgba(24, 21, 34, 0.85);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 4px;
+  color: #e2d9f3;
+  letter-spacing: 1px;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.tech-legend-pill:hover {
+  background: var(--accentColor);
+  color: #0b080c;
+  border-color: var(--accentColor);
+}
+
+.tech-canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+}

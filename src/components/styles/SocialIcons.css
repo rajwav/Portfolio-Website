@@ -1,0 +1,152 @@
+.icons-section {
+  position: fixed;
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  bottom: 0;
+  z-index: 99;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.social-icons {
+  position: absolute;
+  left: -20px;
+  bottom: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  padding: 10px;
+}
+.social-item-wrap {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-icon-link {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  font-size: 23px;
+  color: #94a3b8;
+  will-change: transform;
+  transition: color 0.25s ease;
+}
+.social-item-wrap:hover .social-icon-link {
+  color: var(--accentColor);
+}
+
+.social-tooltip {
+  position: absolute;
+  left: 54px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  background: #14111c;
+  border: 1px solid #373147;
+  padding: 10px 14px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  min-width: 150px;
+  text-decoration: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  z-index: 1000;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7);
+}
+
+.social-item-wrap:hover .social-tooltip,
+.social-tooltip:hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+  border-color: var(--accentColor);
+}
+
+.social-tooltip-name {
+  font-family: monospace, "Geist Mono", sans-serif;
+  font-size: 10px;
+  color: var(--accentColor);
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.social-tooltip-handle {
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  color: #f8fafc;
+  font-weight: 500;
+  margin: 2px 0 4px 0;
+}
+
+.social-tooltip-action {
+  font-family: monospace, "Geist Mono", sans-serif;
+  font-size: 10px;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+.resume-button {
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  gap: 5px;
+  bottom: 40px;
+  right: 0;
+  width: auto;
+  text-wrap: nowrap;
+  letter-spacing: 4px;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 600;
+  color: #5e5e5e;
+  cursor: pointer;
+  transition: 0.5s;
+  transform-origin: left bottom;
+  transform: translateX(100%) rotateZ(-90deg);
+}
+.resume-button:hover {
+  color: #fff;
+}
+div.resume-button span {
+  color: #fff;
+  font-size: 17px;
+  margin-top: -1px;
+  display: flex;
+  align-items: center;
+}
+.check-line {
+  position: fixed;
+  top: 655px;
+  left: 0;
+  height: 1px;
+  background-color: #ffffff;
+  width: 100%;
+  z-index: 99999;
+}
+@media only screen and (min-width: 900px) {
+  .social-icons {
+    display: flex;
+    gap: 16px;
+  }
+  .social-icon-link {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .resume-button {
+    transform: none;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  div.resume-button span {
+    font-size: 23px;
+    margin-top: -1.5px;
+  }
+}

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <style>
+      @keyframes pulseDot { 0%, 100% { opacity: 0.4; r: 2.5; } 50% { opacity: 1; r: 4; } }
+      @keyframes flowH { 0% { transform: translateX(-10px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateX(25px); opacity: 0; } }
+      @keyframes flowV { 0% { transform: translateY(-10px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(25px); opacity: 0; } }
+      .p-dot { animation: pulseDot 2s infinite ease-in-out; }
+      .dot-1 { animation-delay: 0s; }
+      .dot-2 { animation-delay: 0.6s; }
+      .dot-3 { animation-delay: 1.2s; }
+    </style>
+    <pattern id="grid1" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1f1d26" stroke-width="0.75"/>
+    </pattern>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#0d0c12"/>
+  <rect width="600" height="400" fill="url(#grid1)"/>
+
+  <!-- Blueprint Header -->
+  <rect x="25" y="20" width="550" height="30" fill="#14121c" stroke="#2d2938" stroke-width="1" rx="4"/>
+  <text x="40" y="39" fill="#a78bfa" font-family="monospace" font-size="10" letter-spacing="1.5">SYS_ARCH // RAJ_OS_01 · LOCAL-FIRST COGNITIVE CORE</text>
+  <circle cx="490" cy="35" r="3" fill="#10b981" class="p-dot dot-1"/>
+  <text x="502" y="39" fill="#10b981" font-family="monospace" font-size="9" letter-spacing="1">CORE_OK</text>
+
+  <!-- Architecture Boundary -->
+  <rect x="45" y="65" width="510" height="295" fill="none" stroke="#2a2636" stroke-width="1" stroke-dasharray="4,4" rx="8"/>
+  <text x="60" y="82" fill="#64748b" font-family="monospace" font-size="8.5">5-TIER PERMISSION RING ENFORCEMENT</text>
+
+  <!-- Cognitive Router -->
+  <rect x="65" y="98" width="135" height="75" fill="#171522" stroke="#4338ca" stroke-width="1" rx="4"/>
+  <text x="75" y="118" fill="#a78bfa" font-family="monospace" font-size="10" font-weight="bold">COGNITIVE ROUTER</text>
+  <text x="75" y="136" fill="#94a3b8" font-family="monospace" font-size="8.5">Intent Classification</text>
+  <text x="75" y="152" fill="#94a3b8" font-family="monospace" font-size="8.5">Streaming Pipeline</text>
+
+  <!-- Arrow -->
+  <path d="M 200 135 L 235 135" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+  <circle cx="217" cy="135" r="2.5" fill="#a78bfa" class="p-dot dot-1"/>
+
+  <!-- Model Gateway -->
+  <rect x="235" y="98" width="150" height="75" fill="#171522" stroke="#6366f1" stroke-width="1" rx="4"/>
+  <text x="245" y="118" fill="#818cf8" font-family="monospace" font-size="10" font-weight="bold">MODEL GATEWAY</text>
+  <text x="245" y="136" fill="#94a3b8" font-family="monospace" font-size="8.5">Groq · Claude · OpenAI</text>
+  <text x="245" y="152" fill="#94a3b8" font-family="monospace" font-size="8.5">Ollama Local Fallback</text>
+
+  <!-- Arrow -->
+  <path d="M 385 135 L 420 135" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+  <circle cx="402" cy="135" r="2.5" fill="#a78bfa" class="p-dot dot-2"/>
+
+  <!-- Permission Rings -->
+  <rect x="420" y="98" width="120" height="75" fill="#171522" stroke="#10b981" stroke-width="1" rx="4"/>
+  <text x="430" y="118" fill="#34d399" font-family="monospace" font-size="10" font-weight="bold">SECURITY RINGS</text>
+  <text x="430" y="136" fill="#94a3b8" font-family="monospace" font-size="8.5">Ring 0: Pure Math</text>
+  <text x="430" y="152" fill="#94a3b8" font-family="monospace" font-size="8.5">Ring 4: Host I/O</text>
+
+  <!-- Downward Bus -->
+  <path d="M 310 173 L 310 205" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+  <circle cx="310" cy="189" r="2.5" fill="#a78bfa" class="p-dot dot-3"/>
+
+  <!-- Storage Engine -->
+  <rect x="65" y="205" width="475" height="135" fill="url(#coreGrad)" stroke="#3f3852" stroke-width="1" rx="6"/>
+  <text x="85" y="228" fill="#f8fafc" font-family="monospace" font-size="11" font-weight="bold">STORAGE &amp; EPISODIC MEMORY ENGINE</text>
+
+  <!-- SQLite Box -->
+  <rect x="85" y="245" width="205" height="75" fill="#13111c" stroke="#3730a3" stroke-width="1" rx="4"/>
+  <text x="95" y="268" fill="#c084fc" font-family="monospace" font-size="10" font-weight="bold">SQLITE WAL STORAGE</text>
+  <text x="95" y="286" fill="#94a3b8" font-family="monospace" font-size="8.5">Deterministic State Machine</text>
+  <text x="95" y="302" fill="#94a3b8" font-family="monospace" font-size="8.5">Atomic Fact Extraction</text>
+
+  <!-- FTS5 Box -->
+  <rect x="315" y="245" width="205" height="75" fill="#13111c" stroke="#0ea5e9" stroke-width="1" rx="4"/>
+  <text x="325" y="268" fill="#38bdf8" font-family="monospace" font-size="10" font-weight="bold">FTS5 DOCUMENT BRAIN</text>
+  <text x="325" y="286" fill="#94a3b8" font-family="monospace" font-size="8.5">Local Full-Text Indexing</text>
+  <text x="325" y="302" fill="#94a3b8" font-family="monospace" font-size="8.5">Token-Efficient Parsing</text>
+
+  <!-- Footer Technical Callout -->
+  <text x="25" y="380" fill="#475569" font-family="monospace" font-size="8.5">LOC // LOCAL-FIRST · ZERO CLOUD VENDOR LOCK-IN · 266+ PASSING TESTS</text>
+</svg>

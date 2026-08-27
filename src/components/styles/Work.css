@@ -1,0 +1,437 @@
+.work-section {
+  transition: 0s;
+  height: 100vh;
+  height: 100svh;
+  box-sizing: border-box;
+  will-change: transform;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--backgroundColor);
+  z-index: 10;
+}
+
+.work-section h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: #f8fafc;
+  font-family: "Geist", sans-serif;
+  z-index: 5;
+  padding-left: clamp(20px, 4vw, 80px);
+}
+
+.work-section h2 > span {
+  color: var(--accentColor);
+  font-weight: 400;
+  font-family: monospace, "Geist Mono", sans-serif;
+  letter-spacing: 2px;
+}
+
+.work-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-content: stretch;
+  box-sizing: border-box;
+}
+
+.work-flex {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  margin-left: 0;
+  padding-left: clamp(20px, 4vw, 80px);
+  padding-right: 120px;
+  position: relative;
+}
+
+.work-box {
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  width: 620px;
+  box-sizing: border-box;
+  border-right: 1px solid #282433;
+  flex-shrink: 0;
+  gap: 30px;
+  justify-content: center;
+}
+
+.work-flex .work-box:nth-child(even) {
+  flex-direction: column-reverse;
+}
+
+.work-flex::before,
+.work-flex::after {
+  content: "";
+  width: calc(50000vw);
+  height: 1px;
+  background-color: #282433;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.work-flex::after {
+  top: 100%;
+}
+
+.work-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.work-number {
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 700;
+  font-family: monospace, "Geist Mono", sans-serif;
+  color: var(--accentColor);
+  letter-spacing: -0.5px;
+}
+
+.work-header-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.work-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-family: monospace, "Geist Mono", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accentColor);
+  border: 1px solid rgba(194, 164, 255, 0.35);
+  background: rgba(194, 164, 255, 0.08);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.work-category {
+  font-size: 10.5px;
+  font-family: monospace, "Geist Mono", sans-serif;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.work-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin: 6px 0 8px 0;
+  letter-spacing: -0.3px;
+  font-family: "Geist", sans-serif;
+}
+
+.work-tagline {
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #d1cbd8;
+  margin: 0 0 12px 0;
+}
+
+.work-systems-container {
+  margin: 10px 0;
+}
+
+.work-systems-heading {
+  font-size: 10px;
+  font-family: monospace, "Geist Mono", sans-serif;
+  color: #94a3b8;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.work-systems-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.work-systems-list li {
+  font-family: monospace, "Geist Mono", sans-serif;
+  font-size: 12px;
+  color: #e2e8f0;
+  letter-spacing: 0.3px;
+  line-height: 1.45;
+}
+
+.work-tech-chip {
+  font-family: monospace, "Geist Mono", sans-serif;
+  font-size: 11.5px;
+  color: #c4b5fd;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #282433;
+  letter-spacing: 0.5px;
+}
+
+.work-tech-chip span {
+  color: #94a3b8;
+}
+
+.work-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  align-items: center;
+}
+
+.work-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-family: monospace, "Geist Mono", sans-serif;
+  color: #f8fafc;
+  background: #181522;
+  border: 1px solid #373147;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.work-project-link:hover {
+  background: var(--accentColor);
+  color: #0b080c;
+  border-color: var(--accentColor);
+  transform: translateY(-2px);
+}
+
+.work-demo-link {
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
+.work-image {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.work-image-in {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #373147;
+  background: #0d0c12;
+  display: block;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.work-artifact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #14111c;
+  border-bottom: 1px solid #282433;
+}
+
+.work-artifact-tag {
+  font-size: 9.5px;
+  font-family: monospace, "Geist Mono", sans-serif;
+  color: var(--accentColor);
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.work-artifact-inspect {
+  font-size: 9.5px;
+  font-family: monospace, "Geist Mono", sans-serif;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+.work-image-media-wrap {
+  width: 100%;
+  max-width: 480px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b0910;
+}
+
+.work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.work-card-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  border-radius: 8px;
+  transition: opacity 0.25s ease;
+}
+
+.work-link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--backgroundColor);
+  width: 40px;
+  border-radius: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(167, 139, 250, 0.4),
+    inset 0px 0px 10px 0px #393939;
+  transition: 0.3s;
+  opacity: 0;
+  z-index: 2;
+}
+
+.work-image a:hover .work-link {
+  opacity: 1;
+}
+
+@media only screen and (max-height: 900px) {
+  .work-section h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  .work-image-media-wrap {
+    height: 200px;
+  }
+  .work-box {
+    padding: 30px 25px;
+    gap: 16px;
+    width: 520px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .work-box {
+    width: 500px;
+    padding: 30px 25px;
+    gap: 18px;
+  }
+  .work-flex {
+    margin-left: 0;
+    padding-left: 40px;
+    padding-right: 80px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .work-section {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .work-section h2 {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-size: clamp(20px, 5vw, 26px);
+    line-height: 1.15;
+    padding-left: clamp(20px, 4vw, 30px);
+  }
+  .work-container {
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+    padding-top: 8px;
+  }
+  .work-flex {
+    flex: 1;
+    height: auto;
+    margin-left: 0;
+    padding-left: clamp(20px, 4vw, 30px);
+    padding-right: clamp(20px, 4vw, 30px);
+    align-items: flex-start;
+  }
+  .work-box {
+    width: min(calc(100vw - 40px), 380px);
+    padding: 8px 12px;
+    gap: 4px;
+    justify-content: flex-start;
+    border-right: 1px solid #282433;
+  }
+  .work-flex .work-box:nth-child(even) {
+    flex-direction: column;
+  }
+  .work-number {
+    font-size: 20px;
+  }
+  .work-name {
+    font-size: 16px;
+    margin: 1px 0 2px 0;
+  }
+  .work-tagline {
+    font-size: 11px;
+    line-height: 1.3;
+    margin: 0 0 2px 0;
+  }
+  .work-systems-container {
+    margin: 1px 0;
+  }
+  .work-systems-heading {
+    font-size: 8px;
+    margin-bottom: 1px;
+  }
+  .work-systems-list li {
+    font-size: 10px;
+    line-height: 1.25;
+  }
+  .work-tech-chip {
+    font-size: 9px;
+    margin-top: 1px;
+    padding-top: 2px;
+  }
+  .work-links-row {
+    margin-top: 3px;
+    gap: 5px;
+  }
+  .work-project-link {
+    font-size: 10px;
+    padding: 3px 7px;
+  }
+  .work-artifact-header {
+    padding: 3px 6px;
+  }
+  .work-artifact-tag {
+    font-size: 8.5px;
+  }
+  .work-artifact-inspect {
+    font-size: 8.5px;
+  }
+  .work-image-media-wrap {
+    height: 115px;
+  }
+}

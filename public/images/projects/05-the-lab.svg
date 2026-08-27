@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <style>
+      @keyframes pulseDot { 0%, 100% { opacity: 0.4; r: 2.5; } 50% { opacity: 1; r: 4; } }
+      .p-dot { animation: pulseDot 2s infinite ease-in-out; }
+      .dot-1 { animation-delay: 0s; }
+      .dot-2 { animation-delay: 0.7s; }
+    </style>
+    <pattern id="grid5" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#26201a" stroke-width="0.75"/>
+    </pattern>
+    <linearGradient id="labGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#140f0a"/>
+  <rect width="600" height="400" fill="url(#grid5)"/>
+
+  <!-- Header -->
+  <rect x="25" y="20" width="550" height="30" fill="#1f160e" stroke="#452a14" stroke-width="1" rx="4"/>
+  <text x="40" y="39" fill="#fbbf24" font-family="monospace" font-size="10" letter-spacing="1.5">LAB_RESEARCH // PROTOTYPES · SENSORS &amp; EDGE TELEMETRY</text>
+  <circle cx="470" cy="35" r="3" fill="#f59e0b" class="p-dot dot-1"/>
+  <text x="480" y="39" fill="#f59e0b" font-family="monospace" font-size="9" letter-spacing="1">EXPERIMENTAL</text>
+
+  <!-- Sensor Ingestion -->
+  <rect x="45" y="65" width="145" height="110" fill="#24170d" stroke="#b45309" stroke-width="1" rx="4"/>
+  <text x="55" y="85" fill="#fcd34d" font-family="monospace" font-size="9.5" font-weight="bold">HARDWARE &amp; SENSORS</text>
+  <text x="55" y="105" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Micro-controllers (C++)</text>
+  <text x="55" y="122" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Sensor Fusion Pipelines</text>
+  <text x="55" y="139" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ High-baud Serial Streams</text>
+  <text x="55" y="156" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Telemetry Validation</text>
+
+  <!-- Flow Line -->
+  <path d="M 190 120 L 225 120" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+  <circle cx="207" cy="120" r="2.5" fill="#f59e0b" class="p-dot dot-1"/>
+
+  <!-- Edge AI Compute -->
+  <rect x="225" y="65" width="170" height="110" fill="#24170d" stroke="#d97706" stroke-width="1" rx="4"/>
+  <text x="235" y="85" fill="#fde68a" font-family="monospace" font-size="9.5" font-weight="bold">EDGE AI ACCELERATION</text>
+  <text x="235" y="105" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Embedded Inference Engines</text>
+  <text x="235" y="122" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Autonomous Agent Routing</text>
+  <text x="235" y="139" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Quantized Neural Models</text>
+  <text x="235" y="156" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Real-time Telemetry Parsing</text>
+
+  <!-- Flow Line -->
+  <path d="M 395 120 L 430 120" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+  <circle cx="412" cy="120" r="2.5" fill="#f59e0b" class="p-dot dot-2"/>
+
+  <!-- State Machine -->
+  <rect x="430" y="65" width="125" height="110" fill="#24170d" stroke="#92400e" stroke-width="1" rx="4"/>
+  <text x="440" y="85" fill="#fcd34d" font-family="monospace" font-size="9.5" font-weight="bold">AGENT CONTROL</text>
+  <text x="440" y="105" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ State Graph</text>
+  <text x="440" y="122" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Event Queue</text>
+  <text x="440" y="139" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Safe Control</text>
+  <text x="440" y="156" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Self-healing</text>
+
+  <!-- Physics & Prototyping Box -->
+  <rect x="45" y="195" width="510" height="145" fill="url(#labGrad)" stroke="#523214" stroke-width="1" rx="6"/>
+  <text x="65" y="220" fill="#fef3c7" font-family="monospace" font-size="11" font-weight="bold">PHYSICS TO COMPUTING · CONTINUOUS INQUIRY</text>
+
+  <!-- First-Principles -->
+  <rect x="65" y="235" width="235" height="85" fill="#171008" stroke="#b45309" stroke-width="1" rx="4"/>
+  <text x="75" y="255" fill="#fde68a" font-family="monospace" font-size="9.5" font-weight="bold">FIRST-PRINCIPLES LEARNING</text>
+  <text x="75" y="275" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Deconstructing fundamental mechanics</text>
+  <text x="75" y="292" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Computational simulations &amp; models</text>
+  <text x="75" y="308" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Building real software from ground up</text>
+
+  <!-- Lab Work -->
+  <rect x="315" y="235" width="220" height="85" fill="#171008" stroke="#78350f" stroke-width="1" rx="4"/>
+  <text x="325" y="255" fill="#fbbf24" font-family="monospace" font-size="9.5" font-weight="bold">EXPLORATORY WORKBENCH</text>
+  <text x="325" y="275" fill="#94a3b8" font-family="monospace" font-size="8.5">Linux environments &amp; build tools</text>
+  <text x="325" y="292" fill="#94a3b8" font-family="monospace" font-size="8.5">C++ systems &amp; Python data science</text>
+  <text x="325" y="308" fill="#94a3b8" font-family="monospace" font-size="8.5">Building in public &amp; shipping code</text>
+
+  <!-- Footer -->
+  <text x="25" y="380" fill="#475569" font-family="monospace" font-size="8.5">STATUS // CONTINUOUS EXPERIMENTATION · HARDWARE-SOFTWARE FUSION · VSSUT BURLA</text>
+</svg>

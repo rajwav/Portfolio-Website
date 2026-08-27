@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <style>
+      @keyframes pulseDot { 0%, 100% { opacity: 0.4; r: 2.5; } 50% { opacity: 1; r: 4; } }
+      .p-dot { animation: pulseDot 2s infinite ease-in-out; }
+      .dot-1 { animation-delay: 0s; }
+      .dot-2 { animation-delay: 0.7s; }
+    </style>
+    <pattern id="grid3" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#211b24" stroke-width="0.75"/>
+    </pattern>
+    <linearGradient id="taraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#0f0c12"/>
+  <rect width="600" height="400" fill="url(#grid3)"/>
+
+  <!-- Header -->
+  <rect x="25" y="20" width="550" height="30" fill="#17121c" stroke="#33243d" stroke-width="1" rx="4"/>
+  <text x="40" y="39" fill="#f472b6" font-family="monospace" font-size="10" letter-spacing="1.5">SYS_EXPERIMENT // TARA · APPLE SILICON REASONING ARCHITECTURE</text>
+  <circle cx="485" cy="35" r="3" fill="#f472b6" class="p-dot dot-1"/>
+  <text x="495" y="39" fill="#f472b6" font-family="monospace" font-size="9" letter-spacing="1">PROTOTYPE</text>
+
+  <!-- User Input / Audio VAD -->
+  <rect x="45" y="65" width="145" height="110" fill="#181120" stroke="#db2777" stroke-width="1" rx="4"/>
+  <text x="55" y="85" fill="#f472b6" font-family="monospace" font-size="9.5" font-weight="bold">INPUT &amp; AUDIO VAD</text>
+  <text x="55" y="105" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Faster-Whisper int8</text>
+  <text x="55" y="122" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Voice Activity Detection</text>
+  <text x="55" y="139" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Wake Word Pipeline</text>
+  <text x="55" y="156" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Stream TTS (say)</text>
+
+  <!-- Flow Line -->
+  <path d="M 190 120 L 225 120" fill="none" stroke="#f472b6" stroke-width="1.5"/>
+  <circle cx="207" cy="120" r="2.5" fill="#f472b6" class="p-dot dot-1"/>
+
+  <!-- Hybrid Cloud / Local Brain -->
+  <rect x="225" y="65" width="170" height="110" fill="#181120" stroke="#9333ea" stroke-width="1" rx="4"/>
+  <text x="235" y="85" fill="#c084fc" font-family="monospace" font-size="9.5" font-weight="bold">HYBRID REASONING</text>
+  <text x="235" y="105" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Groq API (Primary Cloud)</text>
+  <text x="235" y="122" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Ollama (Local Fallback)</text>
+  <text x="235" y="139" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Moondream Screen Vision</text>
+  <text x="235" y="156" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Single-Request Stream</text>
+
+  <!-- Flow Line -->
+  <path d="M 395 120 L 430 120" fill="none" stroke="#f472b6" stroke-width="1.5"/>
+  <circle cx="412" cy="120" r="2.5" fill="#f472b6" class="p-dot dot-2"/>
+
+  <!-- macOS Action Gateway -->
+  <rect x="430" y="65" width="125" height="110" fill="#181120" stroke="#e11d48" stroke-width="1" rx="4"/>
+  <text x="440" y="85" fill="#fb7185" font-family="monospace" font-size="9.5" font-weight="bold">SAFE ACTIONS</text>
+  <text x="440" y="105" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ CPU / RAM Stats</text>
+  <text x="440" y="122" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ App Dispatcher</text>
+  <text x="440" y="139" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Audited Logs</text>
+  <text x="440" y="156" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Path Sandboxing</text>
+
+  <!-- Memory & Apple Silicon Optimization Box -->
+  <rect x="45" y="195" width="510" height="145" fill="url(#taraGrad)" stroke="#4a284e" stroke-width="1" rx="6"/>
+  <text x="65" y="220" fill="#fdf2f8" font-family="monospace" font-size="11" font-weight="bold">EPISODIC MEMORY &amp; APPLE SILICON PIPELINE</text>
+
+  <!-- SQLite Memory -->
+  <rect x="65" y="235" width="235" height="85" fill="#120c17" stroke="#a21caf" stroke-width="1" rx="4"/>
+  <text x="75" y="255" fill="#e879f9" font-family="monospace" font-size="9.5" font-weight="bold">EPISODIC USER MEMORY</text>
+  <text x="75" y="275" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Non-destructive fact extraction</text>
+  <text x="75" y="292" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Conflict resolution state</text>
+  <text x="75" y="308" fill="#94a3b8" font-family="monospace" font-size="8.5">▸ Incremental conversation compaction</text>
+
+  <!-- Hardware Target -->
+  <rect x="315" y="235" width="220" height="85" fill="#120c17" stroke="#7e22ce" stroke-width="1" rx="4"/>
+  <text x="325" y="255" fill="#c084fc" font-family="monospace" font-size="9.5" font-weight="bold">APPLE SILICON ACCELERATION</text>
+  <text x="325" y="275" fill="#94a3b8" font-family="monospace" font-size="8.5">Zero vector DB bloat or LangChain</text>
+  <text x="325" y="292" fill="#94a3b8" font-family="monospace" font-size="8.5">Lightweight unified RAM footprint</text>
+  <text x="325" y="308" fill="#94a3b8" font-family="monospace" font-size="8.5">Pure Python 3.11+ async runtime</text>
+
+  <!-- Footer -->
+  <text x="25" y="380" fill="#475569" font-family="monospace" font-size="8.5">HW // APPLE SILICON OPTIMIZED · ZERO CLOUD TELEMETRY · PRIVACY-FIRST EXPERIMENT</text>
+</svg>
