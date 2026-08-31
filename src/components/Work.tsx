@@ -20,13 +20,20 @@ const Work = () => {
       function getTranslateX() {
         const workFlex = document.querySelector(".work-flex") as HTMLElement;
         if (!workFlex) return 0;
-        const lastBox = document.querySelector(".work-box:last-child") as HTMLElement;
-        if (lastBox) {
-          const padRight = parseFloat(window.getComputedStyle(workFlex).paddingRight) || 80;
-          const totalEnd = lastBox.offsetLeft + lastBox.offsetWidth + padRight;
-          return Math.max(0, totalEnd - window.innerWidth);
-        }
-        return Math.max(0, workFlex.scrollWidth - window.innerWidth);
+        const boxes = workFlex.querySelectorAll<HTMLElement>(".work-box");
+        if (!boxes.length) return 0;
+
+        let totalWidth = 0;
+        boxes.forEach((box) => {
+          totalWidth += box.offsetWidth;
+        });
+
+        const computedStyle = window.getComputedStyle(workFlex);
+        const padLeft = parseFloat(computedStyle.paddingLeft) || 0;
+        const padRight = parseFloat(computedStyle.paddingRight) || 0;
+        const totalContentWidth = totalWidth + padLeft + padRight;
+
+        return Math.max(0, totalContentWidth - window.innerWidth);
       }
 
       const getPinDuration = () => {
@@ -43,7 +50,6 @@ const Work = () => {
           scrub: 1,
           pin: true,
           pinSpacing: true,
-          anticipatePin: 1,
           id: "work",
           invalidateOnRefresh: true,
         },
@@ -59,10 +65,22 @@ const Work = () => {
       // Phase 2: Settled resting buffer — Project 06 is 100% still and completely visible while Work remains pinned
       timeline.to({}, { duration: 0.25 });
 
-      const handleResize = () => {
-        ScrollTrigger.refresh();
+      ScrollTrigger.sort();
+
+      // Self-healing handler for resize, orientation change, tab visibility change, and window focus
+      let resizeDebounce: ReturnType<typeof setTimeout>;
+      const handleSelfHealingRefresh = () => {
+        clearTimeout(resizeDebounce);
+        resizeDebounce = setTimeout(() => {
+          if (document.visibilityState === "visible") {
+            ScrollTrigger.refresh();
+          }
+        }, 150);
       };
-      window.addEventListener("resize", handleResize);
+
+      window.addEventListener("resize", handleSelfHealingRefresh);
+      window.addEventListener("focus", handleSelfHealingRefresh);
+      document.addEventListener("visibilitychange", handleSelfHealingRefresh);
 
       const refreshTimeout1 = setTimeout(() => {
         ScrollTrigger.refresh();
@@ -73,7 +91,10 @@ const Work = () => {
       }, 400);
 
       return () => {
-        window.removeEventListener("resize", handleResize);
+        clearTimeout(resizeDebounce);
+        window.removeEventListener("resize", handleSelfHealingRefresh);
+        window.removeEventListener("focus", handleSelfHealingRefresh);
+        document.removeEventListener("visibilitychange", handleSelfHealingRefresh);
         clearTimeout(refreshTimeout1);
         clearTimeout(refreshTimeout2);
         timeline.kill();
